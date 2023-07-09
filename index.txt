@@ -1,0 +1,122 @@
+<ol class="list-unstyled mb-0">
+        <?php
+        include('db/connection.php');
+        $page = isset($_GET['page']) ? $_GET['page'] : 1;
+        $page1 = ($page == "" || $page == 1) ? 0 : ($page * 5) - 5;
+        $query = mysqli_query($conn, "SELECT * FROM news LIMIT $page1,5");
+        while ($row = mysqli_fetch_array($query)) {
+          ?>
+
+
+        <?php
+        }
+        ?>
+        </ol>
+        </div>
+
+
+        <?php
+        include('db/connection.php');
+        $page = isset($_GET['page']) ? $_GET['page'] : 1;
+        $page1 = ($page == "" || $page == 1) ? 0 : ($page * 3) - 3;
+
+        $query = mysqli_query($conn, "SELECT * FROM news LIMIT $page1,3");
+        while ($row = mysqli_fetch_array($query)) {
+          ?>
+          <div class="blog-post">
+          <h4 class="blog-post-title" style="font-size: 20px;"><a href="single_page.php?single=<?php echo $row['id']; ?>"><?php echo $row['title']; ?></a></h4>
+            <p class="blog-post-meta"><a href="single_page.php?single=<?php echo $row['date']; ?> <a href="#">
+               
+              </a></p>
+            <!--<p><img class="img img-thumbnail"  src="images/<?php echo $row['thumbnail']; ?>"
+                alt="Thumbnail"></p>-->
+            
+            <blockquote>
+              <?php echo substr($row['description'], 0, 35); ?>
+              <a href="single_page.php?single=<?php echo $row['id']; ?>" class="btn btn-primary btn-sm">Read More</a>
+            </blockquote>
+            <hr>
+          </div>
+          <?php
+        }
+        ?>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   
+        <ol class="list-unstyled mb-0">
+        <?php
+        include('db/connection.php');
+        $page = isset($_GET['page']) ? $_GET['page'] : 1;
+        $page1 = ($page == "" || $page == 1) ? 0 : ($page * 5) - 5;
+        $query = mysqli_query($conn, "SELECT * FROM news LIMIT $page1,5");
+        while ($row = mysqli_fetch_array($query)) {
+          ?>
+
+
+        <?php
+        }
+        ?>
+        </ol>
+        </div>
+
+
+        <?php
+        include('db/connection.php');
+        $page = isset($_GET['page']) ? $_GET['page'] : 1;
+        $page1 = ($page == "" || $page == 1) ? 0 : ($page * 3) - 3;
+
+        $query = mysqli_query($conn, "SELECT * FROM news LIMIT $page1,3");
+        while ($row = mysqli_fetch_array($query)) {
+          ?>
+          <div class="blog-post">
+          <h4 class="blog-post-title" style="font-size: 20px;"><a href="single_page.php?single=<?php echo $row['id']; ?>"><?php echo $row['title']; ?></a></h4>
+            <p class="blog-post-meta"><a href="single_page.php?single=<?php echo $row['date']; ?> <a href="#">
+                
+              </a></p>
+            <!--<p><img class="img img-thumbnail"  src="images/<?php echo $row['thumbnail']; ?>"
+                alt="Thumbnail"></p>-->
+            
+            <blockquote>
+              <?php echo substr($row['description'], 0, 35); ?>
+              <a href="single_page.php?single=<?php echo $row['id']; ?>" class="btn btn-primary btn-sm">Read More</a>
+            </blockquote>
+            <hr>
+          </div>
+          <?php
+        }
+        ?>
